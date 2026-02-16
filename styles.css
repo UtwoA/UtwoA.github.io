@@ -19,11 +19,13 @@ body {
   margin: 0;
   min-height: 100%;
   scroll-behavior: smooth;
+  background-color: #070d18;
 }
 
 body {
   font-family: "Manrope", sans-serif;
   color: var(--text);
+  background-color: var(--bg);
   background:
     radial-gradient(circle at 10% 10%, rgba(93, 233, 198, 0.12), transparent 34%),
     radial-gradient(circle at 86% 12%, rgba(255, 178, 107, 0.1), transparent 38%),
@@ -91,6 +93,8 @@ h3 {
   position: sticky;
   top: 0;
   backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  background: rgba(7, 13, 24, 0.46);
   z-index: 10;
 }
 
@@ -237,10 +241,12 @@ h3 {
 
 .card {
   border: 1px solid var(--line);
+  background-color: rgba(17, 31, 54, 0.78);
   background: linear-gradient(162deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.012));
   border-radius: 18px;
   padding: 18px;
   backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   transition: transform 180ms ease, border-color 180ms ease;
 }
 
@@ -649,50 +655,62 @@ h3 {
   }
 
   .git-tree-shell {
-    min-height: 500px;
+    min-height: auto;
+    padding: 16px;
   }
 
   .git-tree-lines {
-    height: 460px;
+    display: none;
   }
 
-  .n-main {
-    left: 8%;
-    top: 38%;
-  }
-
-  .n-frontend {
-    left: 55%;
-    top: 15%;
-  }
-
-  .n-backend {
-    left: 52%;
-    top: 27%;
-  }
-
-  .n-ml {
-    left: 54%;
-    top: 57%;
-  }
-
-  .n-data {
-    left: 52%;
-    top: 78%;
-  }
-
-  .n-devops {
-    left: 56%;
-    top: 4%;
-  }
-
-  .n-release {
-    left: 52%;
-    top: 39%;
-    right: auto;
+  .commit {
+    position: static;
+    margin-bottom: 10px;
+    display: inline-flex;
   }
 
   .footer {
     flex-direction: column;
+  }
+}
+
+/* iOS/Safari color fallback: force readable text on dark background */
+@supports (-webkit-touch-callout: none) {
+  body {
+    background-color: #070d18;
+    color: #ecf3fb;
+  }
+
+  .card,
+  .git-tree-shell,
+  .branch-card,
+  .commit,
+  .commit-tip {
+    background-color: rgba(13, 22, 40, 0.96);
+    color: #ecf3fb;
+  }
+
+  .section-head p,
+  .hero-text,
+  .stat-card p,
+  .branch-card p,
+  .contacts-card p,
+  .commit-tip {
+    color: #b9cce4;
+  }
+}
+
+/* Safari/WebKit fallback to prevent white artifacts on transparent blur layers */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .topbar {
+    background: rgba(7, 13, 24, 0.92);
+  }
+
+  .card,
+  .git-tree-shell,
+  .branch-card,
+  .commit,
+  .commit-tip {
+    background: rgba(13, 22, 40, 0.96);
   }
 }
