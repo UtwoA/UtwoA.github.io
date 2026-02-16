@@ -289,6 +289,52 @@ h3 {
   margin-top: 18px;
 }
 
+.ml-flow {
+  margin-top: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  background: rgba(9, 21, 39, 0.55);
+  padding: 14px;
+}
+
+.ml-flow h4 {
+  margin: 0;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1rem;
+}
+
+.ml-flow > p {
+  margin: 8px 0 0;
+  color: var(--muted);
+}
+
+.pipeline-grid {
+  margin-top: 12px;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.pipe-step {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.025);
+  padding: 10px;
+}
+
+.pipe-step p {
+  margin: 6px 0 0;
+  color: #d8e6f7;
+  font-size: 0.9rem;
+}
+
+.pipe-index {
+  font-family: "Space Grotesk", sans-serif;
+  color: var(--accent);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
 .tag-cloud {
   display: flex;
   flex-wrap: wrap;
@@ -414,6 +460,10 @@ h3 {
   .timeline {
     grid-template-columns: 1fr;
   }
+
+  .pipeline-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 760px) {
@@ -424,7 +474,8 @@ h3 {
 
   .focus-grid,
   .projects-grid,
-  .tg-grid {
+  .tg-grid,
+  .pipeline-grid {
     grid-template-columns: 1fr;
   }
 
