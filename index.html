@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UtwoA Portfolio</title>
+    <meta
+      name="description"
+      content="Портфолио Алексея (utwoa): стек, проекты, Telegram, GitHub, хакатоны и продуктовая разработка."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="noise"></div>
+    <div class="bg-glow bg-glow-a"></div>
+    <div class="bg-glow bg-glow-b"></div>
+
+    <header class="topbar container">
+      <a class="brand" href="#hero">utwoa</a>
+      <nav class="menu">
+        <a href="#about" data-i18n="menu.about">Обо мне</a>
+        <a href="#focus" data-i18n="menu.focus">Фокус</a>
+        <a href="#stack" data-i18n="menu.stack">Стек</a>
+        <a href="#projects" data-i18n="menu.projects">Проекты</a>
+        <a href="#experience" data-i18n="menu.experience">Опыт</a>
+      </nav>
+      <div class="topbar-actions">
+        <button class="lang-btn active" data-lang="ru">RU</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero container" id="hero">
+        <div class="hero-main card">
+          <p class="kicker" data-i18n="hero.kicker">Python-first • Web • Telegram • Infra</p>
+          <h1 data-i18n="hero.title">Алексей (utwoa)</h1>
+          <p class="hero-text" data-i18n="hero.text">
+            Я строю проекты на стыке backend, веба и ИИ: от Telegram mini-app и API до деплоя и поддержки в проде.
+          </p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="https://github.com/UtwoA" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="btn btn-ghost" href="https://t.me/UtwoA" target="_blank" rel="noreferrer">Telegram</a>
+          </div>
+        </div>
+        <div class="hero-side">
+          <article class="stat-card card">
+            <h3 data-i18n="stats.reposTitle">Свежие репозитории</h3>
+            <p data-i18n="stats.reposText">Акцент на активных проектах 2025-2026.</p>
+          </article>
+          <article class="stat-card card">
+            <h3 data-i18n="stats.botsTitle">Боты и mini-app</h3>
+            <p data-i18n="stats.botsText">Telegram-решения: basket, tournament, red-green, more-stars.</p>
+          </article>
+          <article class="stat-card card">
+            <h3 data-i18n="stats.communityTitle">Хакатоны и комьюнити</h3>
+            <p data-i18n="stats.communityText">Участие в хакатонах, продуктовых интенсивах и акселераторах.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section container" id="about">
+        <div class="section-head">
+          <h2 data-i18n="about.title">Обо мне</h2>
+          <p data-i18n="about.subtitle">Кратко о профиле</p>
+        </div>
+        <div class="card">
+          <p data-i18n="about.intro">
+            Алексей (utwoa), студент РТУ МИРЭА по направлению «Искусственный интеллект и анализ данных». Фокус:
+            backend-разработка, автоматизация и развитие веб-продуктов.
+          </p>
+          <p data-i18n="about.profile">
+            ИИ использую в прикладных сценариях: аналитика, прототипирование и оптимизация процессов. Инфраструктура:
+            VPS, WireGuard/VLESS, redsocks, локальные VPN-контуры и эксплуатация серверной среды. Основной язык:
+            Python; дополнительный стек: Java, C, C++ и C#.
+          </p>
+        </div>
+      </section>
+
+      <section class="section container" id="focus">
+        <div class="section-head">
+          <h2 data-i18n="focus.title">Текущий фокус</h2>
+          <p data-i18n="focus.subtitle">Что делаю прямо сейчас</p>
+        </div>
+        <div class="focus-grid">
+          <article class="card focus-item">
+            <h3>langoai</h3>
+            <p data-i18n="focus.langoai">Мобильный продукт во Flutter, развитие идеи и UX-сценариев.</p>
+          </article>
+          <article class="card focus-item">
+            <h3>aguide</h3>
+            <p data-i18n="focus.aguide">Веб-направление: быстрые итерации и доработка функциональности.</p>
+          </article>
+          <article class="card focus-item">
+            <h3>more-stars</h3>
+            <p data-i18n="focus.moreStars">Связка frontend + backend и mini-app в Telegram.</p>
+          </article>
+          <article class="card focus-item">
+            <h3 data-i18n="focus.opsTitle">Deploy & Ops</h3>
+            <p data-i18n="focus.opsText">Docker, Nginx/Uvicorn, CI/CD, сопровождение и масштабирование.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section container" id="stack">
+        <div class="section-head">
+          <h2 data-i18n="stack.title">Технический стек</h2>
+          <p data-i18n="stack.subtitle">Из последних задач и рабочих сценариев</p>
+        </div>
+        <div class="stack-card card">
+          <h3 data-i18n="stack.primary">Основное</h3>
+          <div class="tag-cloud">
+            <span class="chip">Python</span>
+            <span class="chip">FastAPI</span>
+            <span class="chip">Django</span>
+            <span class="chip">Flask</span>
+            <span class="chip">Node.js</span>
+            <span class="chip">JavaScript (ES6+)</span>
+            <span class="chip">TypeScript</span>
+            <span class="chip">HTML5</span>
+            <span class="chip">CSS3</span>
+            <span class="chip">REST API</span>
+            <span class="chip">AJAX</span>
+          </div>
+
+          <h3 data-i18n="stack.data">Данные и платформы</h3>
+          <div class="tag-cloud">
+            <span class="chip">SQL</span>
+            <span class="chip">PostgreSQL</span>
+            <span class="chip">SQLite</span>
+            <span class="chip">Redis</span>
+            <span class="chip">Firebase</span>
+            <span class="chip">Linux</span>
+            <span class="chip">Bash</span>
+            <span class="chip">VPS</span>
+            <span class="chip">Git</span>
+            <span class="chip">GitHub / GitLab</span>
+            <span class="chip">CI/CD</span>
+          </div>
+
+          <h3 data-i18n="stack.architecture">Архитектура и инфраструктура</h3>
+          <div class="tag-cloud">
+            <span class="chip">Microservices</span>
+            <span class="chip">RESTful Architecture</span>
+            <span class="chip">System Administration</span>
+            <span class="chip">Docker</span>
+            <span class="chip">Kubernetes</span>
+            <span class="chip">Nginx</span>
+            <span class="chip">Uvicorn</span>
+            <span class="chip">Apache HTTP Server</span>
+            <span class="chip">WireGuard</span>
+            <span class="chip">VLESS</span>
+            <span class="chip">Redsocks</span>
+            <span class="chip">VPN Setup</span>
+            <span class="chip">VPS Networking</span>
+            <span class="chip">SEO</span>
+            <span class="chip">Support & Maintenance</span>
+          </div>
+
+          <h3 data-i18n="stack.extra">Дополнительно</h3>
+          <div class="tag-cloud">
+            <span class="chip">Laravel</span>
+            <span class="chip">PHP</span>
+            <span class="chip">Java</span>
+            <span class="chip">C</span>
+            <span class="chip">C++</span>
+            <span class="chip">C#</span>
+            <span class="chip">Flutter</span>
+            <span class="chip">WordPress</span>
+            <span class="chip">Tilda</span>
+            <span class="chip">CMS/CRM Integrations</span>
+            <span class="chip">Ruby (learning)</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section container" id="projects">
+        <div class="section-head">
+          <h2 data-i18n="projects.title">Свежие репозитории</h2>
+          <p data-i18n="projects.subtitle">Приоритет на новые и активные</p>
+        </div>
+        <div class="projects-grid">
+          <article class="card project-item">
+            <div class="project-meta">
+              <span class="tag">Python</span>
+              <span class="date" data-i18n="projects.updatedNow">Обновлено недавно</span>
+            </div>
+            <h3>
+              <a href="https://github.com/UtwoA/Data-structuring-and-preprocessing" target="_blank" rel="noreferrer">
+                Data-structuring-and-preprocessing
+              </a>
+            </h3>
+            <p data-i18n="projects.dataPrep">Подготовка и структурирование данных в практических сценариях Python.</p>
+          </article>
+
+          <article class="card project-item">
+            <div class="project-meta">
+              <span class="tag">Python</span>
+              <span class="date">Dec 2025</span>
+            </div>
+            <h3><a href="https://github.com/UtwoA/ASIC_Hub_VPN" target="_blank" rel="noreferrer">ASIC_Hub_VPN</a></h3>
+            <p data-i18n="projects.asic">Веб-интерфейс контроля RPi/ASIC через WireGuard VPN.</p>
+          </article>
+
+          <article class="card project-item">
+            <div class="project-meta">
+              <span class="tag">Jupyter Notebook</span>
+              <span class="date">Dec 2025</span>
+            </div>
+            <h3>
+              <a href="https://github.com/UtwoA/Introduction_to_ML" target="_blank" rel="noreferrer">Introduction_to_ML</a>
+            </h3>
+            <p data-i18n="projects.ml">Материалы и эксперименты по машинному обучению.</p>
+          </article>
+
+          <article class="card project-item">
+            <div class="project-meta">
+              <span class="tag">HTML</span>
+              <span class="date">Dec 2025</span>
+            </div>
+            <h3>
+              <a href="https://github.com/UtwoA/more-stars-frontend" target="_blank" rel="noreferrer">more-stars-frontend</a>
+            </h3>
+            <p data-i18n="projects.front">UI-слой проекта More Stars.</p>
+          </article>
+
+          <article class="card project-item">
+            <div class="project-meta">
+              <span class="tag">Python</span>
+              <span class="date">Dec 2025</span>
+            </div>
+            <h3>
+              <a href="https://github.com/UtwoA/more-stars-backend" target="_blank" rel="noreferrer">more-stars-backend</a>
+            </h3>
+            <p data-i18n="projects.back">Серверная логика проекта More Stars.</p>
+          </article>
+
+          <article class="card project-item">
+            <div class="project-meta">
+              <span class="tag">Python</span>
+              <span class="date">Last week</span>
+            </div>
+            <h3><a href="https://github.com/UtwoA/aguide" target="_blank" rel="noreferrer">aguide</a></h3>
+            <p data-i18n="projects.aguide">Активная разработка веб-проекта и расширение функциональности.</p>
+          </article>
+        </div>
+        <a class="link-inline" href="https://github.com/UtwoA?tab=repositories" target="_blank" rel="noreferrer" data-i18n="projects.more">
+          Смотреть все репозитории на GitHub
+        </a>
+      </section>
+
+      <section class="section container" id="telegram">
+        <div class="section-head">
+          <h2 data-i18n="telegram.title">Telegram-продукты</h2>
+          <p data-i18n="telegram.subtitle">Боты и mini-app</p>
+        </div>
+        <div class="tg-grid">
+          <article class="card tg-item"><h3>basket_bot</h3></article>
+          <article class="card tg-item"><h3>more-stars mini-app</h3></article>
+          <article class="card tg-item"><h3>red-green-button</h3></article>
+          <article class="card tg-item"><h3>tournament-bot</h3></article>
+          <article class="card tg-item"><h3 data-i18n="telegram.fire">бот огонек</h3></article>
+        </div>
+      </section>
+
+      <section class="section container" id="experience">
+        <div class="section-head">
+          <h2 data-i18n="experience.title">Опыт и движение</h2>
+          <p data-i18n="experience.subtitle">Не только код, но и продуктовая среда</p>
+        </div>
+        <div class="timeline">
+          <article class="card timeline-item">
+            <h3 data-i18n="experience.hackathonsTitle">Хакатоны и продуктовые интенсивы</h3>
+            <p data-i18n="experience.hackathonsText">
+              Регулярно участвую в хакатонах, продуктоновых форматах и инженерных спринтах.
+            </p>
+          </article>
+          <article class="card timeline-item">
+            <h3 data-i18n="experience.accelTitle">Акселераторы и комьюнити</h3>
+            <p data-i18n="experience.accelText">
+              Работа в среде быстрых проверок гипотез, коммуникация с командами и экспертами.
+            </p>
+          </article>
+          <article class="card timeline-item">
+            <h3 data-i18n="experience.ownTitle">Собственные проекты</h3>
+            <p data-i18n="experience.ownText">
+              От мобильного приложения langoai до веб-сервисов и автоматизации через Telegram.
+            </p>
+          </article>
+          <article class="card timeline-item">
+            <h3 data-i18n="experience.sysadminTitle">Сисадмин и сетевой опыт</h3>
+            <p data-i18n="experience.sysadminText">
+              Настраиваю VPS и VPN-инфраструктуру: WireGuard, VLESS, redsocks, локальные VPN и эксплуатация серверов.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section container" id="contacts">
+        <div class="card contacts-card">
+          <h2 data-i18n="contacts.title">Контакты</h2>
+          <p data-i18n="contacts.text">Если нужен разработчик под продуктовые задачи, пиши.</p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="https://t.me/UtwoA" target="_blank" rel="noreferrer">Telegram</a>
+            <a class="btn btn-ghost" href="https://github.com/UtwoA" target="_blank" rel="noreferrer">GitHub</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer container">
+      <span>© <span id="year"></span> utwoa</span>
+      <span data-i18n="footer.note">Сделано как персональная витрина-портфолио</span>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
