@@ -289,50 +289,220 @@ h3 {
   margin-top: 18px;
 }
 
-.ml-flow {
-  margin-top: 14px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 14px;
-  background: rgba(9, 21, 39, 0.55);
-  padding: 14px;
-}
-
-.ml-flow h4 {
-  margin: 0;
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 1rem;
-}
-
-.ml-flow > p {
-  margin: 8px 0 0;
+.stack-tree .tree-caption {
+  margin: 0 0 14px;
   color: var(--muted);
 }
 
-.pipeline-grid {
-  margin-top: 12px;
-  display: grid;
-  gap: 10px;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+.git-tree-shell {
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-radius: 16px;
+  padding: 14px;
+  background: rgba(7, 16, 30, 0.7);
+  min-height: 360px;
 }
 
-.pipe-step {
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.025);
-  padding: 10px;
+.git-tree-lines {
+  width: 100%;
+  height: 330px;
+  display: block;
 }
 
-.pipe-step p {
-  margin: 6px 0 0;
-  color: #d8e6f7;
-  font-size: 0.9rem;
+.branch {
+  fill: none;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-dasharray: 8 6;
+  animation: flow 10s linear infinite;
 }
 
-.pipe-index {
+.branch.main {
+  stroke: #7ce9d2;
+}
+
+.branch.frontend {
+  stroke: #7ec0ff;
+}
+
+.branch.backend {
+  stroke: #b8f07a;
+}
+
+.branch.ml {
+  stroke: #ffb87a;
+}
+
+.branch.data {
+  stroke: #f3d36f;
+}
+
+.branch.devops {
+  stroke: #ff8ea1;
+}
+
+.commit {
+  position: absolute;
   font-family: "Space Grotesk", sans-serif;
-  color: var(--accent);
+  font-size: 0.78rem;
   font-weight: 700;
-  letter-spacing: 0.04em;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(12, 26, 45, 0.92);
+  color: #e8f2ff;
+  box-shadow: 0 0 0 3px rgba(7, 16, 30, 0.72);
+  cursor: default;
+  outline: none;
+}
+
+.commit:focus-visible {
+  box-shadow: 0 0 0 3px rgba(7, 16, 30, 0.72), 0 0 0 5px rgba(124, 233, 210, 0.42);
+}
+
+.commit-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.commit-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: 6px;
+  font-size: 0.64rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  background: rgba(255, 255, 255, 0.12);
+  color: #ecf6ff;
+}
+
+.commit-tip {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 10px);
+  transform: translateX(-50%) translateY(6px);
+  width: max-content;
+  max-width: 280px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(10, 20, 36, 0.96);
+  color: #dbecff;
+  font-size: 0.78rem;
+  line-height: 1.35;
+  text-align: left;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 150ms ease, transform 150ms ease;
+  z-index: 4;
+}
+
+.commit:hover .commit-tip,
+.commit:focus-visible .commit-tip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.n-main .commit-tip {
+  border-color: rgba(124, 233, 210, 0.42);
+  background: rgba(10, 30, 31, 0.96);
+}
+
+.n-frontend .commit-tip {
+  border-color: rgba(126, 192, 255, 0.45);
+  background: rgba(14, 27, 46, 0.96);
+}
+
+.n-backend .commit-tip {
+  border-color: rgba(184, 240, 122, 0.45);
+  background: rgba(22, 34, 24, 0.96);
+}
+
+.n-ml .commit-tip {
+  border-color: rgba(255, 184, 122, 0.48);
+  background: rgba(40, 27, 16, 0.96);
+}
+
+.n-data .commit-tip {
+  border-color: rgba(243, 211, 111, 0.48);
+  background: rgba(38, 33, 16, 0.96);
+}
+
+.n-devops .commit-tip {
+  border-color: rgba(255, 142, 161, 0.5);
+  background: rgba(40, 20, 30, 0.96);
+}
+
+.n-release .commit-tip {
+  border-color: rgba(214, 219, 255, 0.5);
+  background: rgba(24, 26, 42, 0.96);
+}
+
+.n-main {
+  left: 6%;
+  top: 49%;
+}
+
+.n-frontend {
+  left: 41%;
+  top: 21%;
+}
+
+.n-backend {
+  left: 53%;
+  top: 33%;
+}
+
+.n-ml {
+  left: 62%;
+  top: 67%;
+}
+
+.n-data {
+  left: 74%;
+  top: 82%;
+}
+
+.n-devops {
+  left: 77%;
+  top: 9%;
+}
+
+.n-release {
+  right: 5%;
+  top: 49%;
+}
+
+.stack-branches {
+  margin-top: 14px;
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.branch-card {
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 12px;
+}
+
+.branch-card p {
+  margin: 8px 0 10px;
+  color: var(--muted);
+}
+
+@keyframes flow {
+  to {
+    stroke-dashoffset: -84;
+  }
 }
 
 .tag-cloud {
@@ -461,8 +631,8 @@ h3 {
     grid-template-columns: 1fr;
   }
 
-  .pipeline-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .stack-branches {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -474,9 +644,52 @@ h3 {
 
   .focus-grid,
   .projects-grid,
-  .tg-grid,
-  .pipeline-grid {
+  .tg-grid {
     grid-template-columns: 1fr;
+  }
+
+  .git-tree-shell {
+    min-height: 500px;
+  }
+
+  .git-tree-lines {
+    height: 460px;
+  }
+
+  .n-main {
+    left: 8%;
+    top: 38%;
+  }
+
+  .n-frontend {
+    left: 55%;
+    top: 15%;
+  }
+
+  .n-backend {
+    left: 52%;
+    top: 27%;
+  }
+
+  .n-ml {
+    left: 54%;
+    top: 57%;
+  }
+
+  .n-data {
+    left: 52%;
+    top: 78%;
+  }
+
+  .n-devops {
+    left: 56%;
+    top: 4%;
+  }
+
+  .n-release {
+    left: 52%;
+    top: 39%;
+    right: auto;
   }
 
   .footer {
