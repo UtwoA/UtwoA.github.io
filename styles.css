@@ -573,6 +573,15 @@ h3 {
   min-height: 88px;
 }
 
+.tg-link {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.tg-link:hover {
+  border-color: rgba(124, 233, 210, 0.5);
+}
+
 .contacts-card {
   text-align: center;
   padding: 26px;
