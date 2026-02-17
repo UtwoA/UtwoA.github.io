@@ -287,6 +287,15 @@ h3 {
   color: var(--muted);
 }
 
+.focus-link {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.focus-link:hover {
+  border-color: rgba(124, 233, 210, 0.5);
+}
+
 .stack-card h3 {
   margin: 0 0 10px;
 }
