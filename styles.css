@@ -596,6 +596,10 @@ h3 {
   padding: 26px;
 }
 
+.contacts-card .hero-cta {
+  justify-content: center;
+}
+
 .footer {
   display: flex;
   justify-content: space-between;
