@@ -25,6 +25,13 @@ const translations = {
     "focus.moreStars": "Связка frontend + backend и mini-app в Telegram.",
     "focus.opsTitle": "Deploy & Ops",
     "focus.opsText": "Docker, Nginx/Uvicorn, CI/CD, плюс системное администрирование и сетевые задачи: VPS, WireGuard, VLESS, redsocks и локальные VPN.",
+    "proof.title": "Proof",
+    "proof.subtitle": "Публичные метрики и инженерная активность",
+    "proof.reposLabel": "Публичные репозитории",
+    "proof.activeLabel": "Активные проекты (90д)",
+    "proof.langsLabel": "Активные технологии",
+    "proof.integrationsLabel": "Интеграции / платформы",
+    "proof.uptimeLabel": "Uptime/CD подход",
     "stack.title": "Технический стек",
     "stack.subtitle": "В формате git-веток и коммитов",
     "stack.treeCaption": "Каждая ветка отражает отдельное рабочее направление.",
@@ -107,6 +114,13 @@ const translations = {
     "focus.moreStars": "Frontend + backend bundle with Telegram mini-app integration.",
     "focus.opsTitle": "Deploy & Ops",
     "focus.opsText": "Docker, Nginx/Uvicorn, CI/CD, plus sysadmin and networking tasks: VPS, WireGuard, VLESS, redsocks, and local VPN flows.",
+    "proof.title": "Proof",
+    "proof.subtitle": "Public metrics and engineering activity",
+    "proof.reposLabel": "Public repositories",
+    "proof.activeLabel": "Active projects (90d)",
+    "proof.langsLabel": "Active technologies",
+    "proof.integrationsLabel": "Integrations / platforms",
+    "proof.uptimeLabel": "Uptime/CD approach",
     "stack.title": "Tech stack",
     "stack.subtitle": "Visualized as git branches and commits",
     "stack.treeCaption": "Each branch represents a practical specialization track.",
@@ -169,6 +183,8 @@ const root = document.documentElement;
 const langButtons = document.querySelectorAll(".lang-btn");
 const i18nNodes = document.querySelectorAll("[data-i18n]");
 const storageKey = "utwoa-site-lang";
+const githubUser = "UtwoA";
+let currentLang = "ru";
 
 function applyLanguage(lang) {
   const dict = translations[lang] || translations.ru;
@@ -187,6 +203,7 @@ function applyLanguage(lang) {
 
   root.lang = lang;
   localStorage.setItem(storageKey, lang);
+  currentLang = lang;
 }
 
 langButtons.forEach((button) => {
@@ -203,3 +220,52 @@ if (preferredLang && translations[preferredLang]) {
 }
 
 document.getElementById("year").textContent = new Date().getFullYear();
+
+function formatDate(dateString, lang) {
+  const date = new Date(dateString);
+  if (Number.isNaN(date.getTime())) {
+    return dateString;
+  }
+  return new Intl.DateTimeFormat(lang === "ru" ? "ru-RU" : "en-US", {
+    day: "2-digit",
+    month: "short",
+    year: "numeric"
+  }).format(date);
+}
+
+function setMetric(id, value) {
+  const node = document.getElementById(id);
+  if (node) node.textContent = value;
+}
+
+function getLanguageCount(repos) {
+  const set = new Set();
+  repos.forEach((repo) => {
+    if (repo.language) set.add(repo.language);
+  });
+  return set.size;
+}
+
+function getActiveReposCount(repos) {
+  const limitDate = new Date();
+  limitDate.setDate(limitDate.getDate() - 90);
+  return repos.filter((repo) => new Date(repo.updated_at) >= limitDate).length;
+}
+
+async function loadGithubData() {
+  try {
+    const response = await fetch(`https://api.github.com/users/${githubUser}/repos?per_page=100&sort=updated`);
+    if (!response.ok) {
+      throw new Error(`GitHub API returned ${response.status}`);
+    }
+    const repos = await response.json();
+
+    setMetric("metric-public-repos", repos.length);
+    setMetric("metric-active-repos", getActiveReposCount(repos));
+    setMetric("metric-langs", getLanguageCount(repos));
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+loadGithubData();
